@@ -5,6 +5,18 @@ use serde::{Serialize, Deserialize};
 use std::env;
 use text_io;
 
+/*
+to be completed:
+1 seperate the code into several files, build a crate tree, use 'mod' key.
+2 print HELP list in the beginning or input HELP to get the HELP list
+3 ?able to change the path where the json lies
+4 add more message to a Task, like "is_completed", a bool to mark a task
+completed. Or add a MARK command to change the status of each task.
+And maybe we can add more types of element into the List, like 'Reminder',
+apart from a single 'Task'. And make them differ, on several emphasis.
+*/
+
+
 const PATH: &'static str = "/data/todo.json";
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
@@ -67,7 +79,7 @@ impl List {
             print!("{j} ");
             i.print();
             println!("");
-            j+=1;
+            j+=1; 
         }
     }
 
